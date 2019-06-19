@@ -340,7 +340,7 @@ nav ul li a button:hover {
 }
 
 .footer-pattern {
-    background: url("../img/footer-pattern.png") no-repeat 50% 50%;
+    background: url("img/footer-pattern.png") no-repeat 50% 50%;
     position: absolute;
     top: 0;
     bottom: 0;
