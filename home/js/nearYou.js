@@ -1,5 +1,4 @@
 // CONTENTS FROM DATABASE
-
 const nearYouContents = [
   {
     id: 1,
