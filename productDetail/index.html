@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-group col-md-5">
                             <select id="inputState" class="form-control">
-                                <!-- Contents From JS File -->
+                                <!-- Locations from JS File -->
                             </select>
                         </div>
                         <div class="col-md-2">
@@ -71,58 +71,30 @@
             </div>
         </div>
 
-
-
-        <!-- CATEGORIES -->
-        <div class="categoryBg">
-            <div class="categories container" id="categoriesHandler">
-                <h2>Product <span>Categories</span> </h2>
-
-            </div>
+        <!--===================================================
+PRODIUCT DETAILS
+===================================================== -->
+        <div class="container-fluid productDetail" id="product">
+            <!-- CONTENTS FROM JAVASCRIPT FILE CONTENTSHANDER.JS -->
         </div>
-
-        <!-- Featured Contents -->
-
-
-        <div class="featured">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center">Featured <span>Products</span></h2>
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-                            <!-- Carousel indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
-                            <!-- Wrapper for carousel items -->
-                            <div class="carousel-inner" id="featuredContents">
-                                <!-- Contents From Javascript -->
-                            </div>
-                            <!-- Carousel controls -->
-                            <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a class="carousel-control right carousel-control-next" href="#myCarousel"
-                                data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </div>
-                    </div>
+        <div class="specs">
+            <div class="row justify-content-center">
+                <div class="productSpecs col-md-9">
+                    <h3>Detail about Product</h3>
+                    <ul id="specs">
+                        <!-- Contents From JS FILE -->
+                    </ul>
                 </div>
             </div>
+
         </div>
 
-        <!-- BASED ON YOUR LOCATION -->
-        <div class="locationBased container" id='nearYou'>
-            <h2>Products <span> Near You</span> </h2>
-        </div>
-
-        <!-- RECENTLY VIEWED -->
-        <div class="locationBased container" id="recentlyViewed">
-            <h2><span>Recently</span> Viewed</h2>
-        </div>
+        <!-- ===================================================
+SIMILAR PRODUCTS FROM THIS SHOP 
+=====================================================-->
+        <!-- <div class="moreFromShop container" id='sameShop'>
+            <h2>More From This Shop</h2>
+        </div> -->
 
 
         <!-- Footer Area -->
@@ -178,15 +150,9 @@
         <!--===============================================================================================-->
         <script src="../js/locationListHandler.js"></script>
         <!--===============================================================================================-->
-        <script src="js/featuredContent.js"></script>
+        <script src="contentHandler.js"></script>
         <!--===============================================================================================-->
-        <script src="js/nearYou.js"></script>
-        <!--===============================================================================================-->
-        <script src="js/recentlyViewed.js"></script>
-        <!--===============================================================================================-->
-        <script src="js/categoriesHandler.js"></script>
-        <!--===============================================================================================-->
-        <script src="script.js"></script>
+        <script src="specsHandler.js"></script>
         <!--===============================================================================================-->
     </body>
 
