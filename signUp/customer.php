@@ -1,60 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Signup</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta name="author" content="Prashant Bhatta">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewpoint" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Hamropasal</title>
+
+	<style type="text/css">
+		.main-form {
+    width: 450px;
+    margin: auto;
+}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">Hamropasal</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-       <!--
-        <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Retailer</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Customer</a>
-                </li>
-            </ul>
-        </div>
-    -->
-
-    </nav>
-
-    <form action="" class="main-form needs-validation" novalidate>
-        <div class="form-group">
-            <label for="gender">Sign-in as</label>
-            <select name="gender" id="gender" class="form-control">
-                <option value="male">Customer</option>
-                <option value="female">Retailer</option>
-            </select>
-        </div>
+	<?php include'header.php'; ?>
+	 <form action="" class="main-form needs-validation" novalidate>
+       <h5 style="text-decoration: underline; text-align: center;">Customer</h5>
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label for="firstname">Firstname</label>
-                    <input type="text" name="firstname" id="firstname" class="form-control is-invalid">
-                    <div class="invalid-feedback">Looks good!</div>
+                    <input type="text" name="firstname" id="firstname" class="form-control ">
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="lastname">Lastname</label>
                     <input type="text" name="lastname" id="lastname" class="form-control">
-                    <small class="form-text text-muted">
-                        This should be your last name.
-                    </small>
+                    
                 </div>
             </div>
         </div>
@@ -68,19 +45,26 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password" class="form-control">
         </div>
-         <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" name="address" id="address" class="form-control" required>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" class="form-control" required>
         </div>
+         
         <div class="form-group">
             <label for="phone-number">Phone-number</label>
             <input type="text" name="phone-number" id="phone-number" class="form-control" required>
         </div>
-        <div class="form-group">
-            <label for="mailing-address">Mailing-address</label>
-            <input type="text" name="mailing-address" id="mailing-address" class="form-control" required>
-        </div>
 
+         <div class="form-group">
+            <label for="gender">Address</label>
+            <select name="gender" id="gender" class="form-control">
+                <option value="male">Kathmandu</option>
+                <option value="female">Pokhara</option>
+                <option value="female">Biratnagar</option>
+
+            </select>
+        </div>
+        
         <div class="form-group">
             <label for="gender">Gender</label>
             <select name="gender" id="gender" class="form-control">
@@ -90,10 +74,11 @@
 
             </select>
         </div>
+        
+
+
         <div class="form-check">
-            <input type="checkbox" id="accept-terms" class="form-check-input">
-            <label for="accept-terms" class="form-check-label">Accept Terms &amp; Conditions</label>
-        </div>
+        
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
@@ -116,5 +101,4 @@
         })
     </script>
 </body>
-
 </html>
