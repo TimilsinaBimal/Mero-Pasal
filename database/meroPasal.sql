@@ -10,11 +10,19 @@ CREATE TABLE multiuserlogin
 );
 CREATE TABLE Product
 (
-    productID INT PRIMARY KEY,
-    productName VARCHAR(255),
+    productID INT
+    AUTO_INCREMENT,
+    productName VARCHAR
+    (255),
     productImage LONGBLOB,
-    price VARCHAR(255),
-    shopName VARCHAR(255),
-    location VARCHAR(255),
-    remarks VARCHAR(255)
+    price VARCHAR
+    (255),
+    shopName VARCHAR
+    (255),
+    location VARCHAR
+    (255),
+    remarks VARCHAR
+    (255),
+    PRIMARY KEY
+    (productID)
 );

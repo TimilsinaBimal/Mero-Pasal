@@ -60,7 +60,7 @@
 
 <div class="container insertData">
 <h2>Enter the Detail of Product</h2>
-    <form action= "../includes/insertStudent.php" method= "POST">
+    <form action= "../include/insert.php" method= "GET">
   <div class="row">
     <div class="col">
       <input type="text" class="form-control" name="productName" placeholder="Product Name">
@@ -74,7 +74,7 @@
       <input type="number" class="form-control" name="price" placeholder="Product Price">
     </div>
     <div class="col">
-    <select id="inputState" class="form-control">
+    <select id="inputState" name="location" class="form-control">
                                  <!-- Contents From JS File -->
                                  </select>
     </div>
@@ -84,7 +84,7 @@
       <input type="text" class="form-control" name="shopName" placeholder="Shop Name">
     </div>
     <div class="col">
-    <select class="form-control" name="depart" id="exampleFormControlSelect1">
+    <select class="form-control" name="remarks" id="exampleFormControlSelect1">
       <option>Select Remarks</option>
       <option>Featured Product</option>
       <option>Non-featured Product</option>

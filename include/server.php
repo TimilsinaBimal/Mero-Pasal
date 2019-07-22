@@ -56,7 +56,7 @@ if (isset($_POST['reg_user'])) {
   	$_SESSION['username'] = $username;
     $_SESSION['success'] = "Your account was Succesfully created";
     echo'<script type="text/javascript">alert("You have successfully created account !!!!")</script>';
-  	header('location: login.php');
+  	header('location: ../index.php');
   }
 }
 
