@@ -3,12 +3,10 @@
 const locationList = [
   "Select Location...",
   "Kathmandu",
-  "Butwal",
   "Dhulikhel",
   "Banepa",
   "Bhaktpur",
-  "Lalitpur",
-  "Kalanki"
+  "Lalitpur"
 ];
 
 var container = document.getElementById("inputState");
