@@ -1,3 +1,10 @@
+<?php
+include_once('../include/connection.php');
+$sql= "SELECT * FROM PRODUCT WHERE remarks='Featured Product';";
+$result = mysqli_query($conn,$sql);
+$resultCheck = mysqli_num_rows($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,9 +97,33 @@
                                 <li data-target="#myCarousel" data-slide-to="2"></li>
                             </ol>
                             <!-- Wrapper for carousel items -->
-                            <div class="carousel-inner" id="featuredContents">
+                            <div class="carousel-inner">
+
+<?php
+if($resultCheck>0){
+    while($row=mysqli_fetch_assoc($result)){
+?>
+                                <div class="item carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrapper">
+                                                <div class="img-box">
+                                                    <img src="productImage/<?php echo $row['productImage'];?>" class="img-responsive img-fluid" alt="">
+                                                </div>
+                                                <div class="thumb-content">
+                                                    <h4><?php echo $row['productName']; ?></h4>
+
+                                                    <p class="item-price"><b>NRs.<?php echo $row['price']; ?></b>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
+                            </div>
+                            <?php }}?>
                             <!-- Carousel controls -->
                             <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
                                 <i class="fa fa-angle-left"></i>
@@ -115,12 +146,15 @@
                     <div class="col-md-5 inform">
                         <h3>Find Cheap and Quality Products on Mero Pasal</h3>
                         <div class="border-bottom"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem optio quod eum
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem optio
+                            quod eum
                             est
                             error
-                            maxime nostrum quam enim modi, vitae dolore dolores iusto suscipit ducimus blanditiis ut!
+                            maxime nostrum quam enim modi, vitae dolore dolores iusto suscipit ducimus
+                            blanditiis ut!
                             Vel,
-                            laudantium explicabo. Laborum reprehenderit, quibusdam corporis minima voluptate rem eum
+                            laudantium explicabo. Laborum reprehenderit, quibusdam corporis minima voluptate rem
+                            eum
                             maxime
                             sit,
                             assumenda labore et ea accusantium quae! Facere, est iste!</p>
@@ -129,12 +163,16 @@
                     <div class="col-md-5 howToFind">
                         <h3>How to Find your Product</h3>
                         <div class="border-bottom"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a, veritatis blanditiis
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a, veritatis
+                            blanditiis
                             tempora
-                            consequatur laudantium eveniet minus quidem maiores error animi! Suscipit voluptatem eaque
-                            perspiciatis numquam adipisci alias ipsa est fugiat sit repudiandae accusamus, rem illo
+                            consequatur laudantium eveniet minus quidem maiores error animi! Suscipit voluptatem
+                            eaque
+                            perspiciatis numquam adipisci alias ipsa est fugiat sit repudiandae accusamus, rem
+                            illo
                             consectetur?
-                            A sequi sint magni accusantium eos et dolorem obcaecati voluptatem, asperiores id. Sed?</p>
+                            A sequi sint magni accusantium eos et dolorem obcaecati voluptatem, asperiores id.
+                            Sed?</p>
                     </div>
                 </div>
             </div>
