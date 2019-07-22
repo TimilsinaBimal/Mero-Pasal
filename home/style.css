@@ -366,7 +366,7 @@ NEAR YOU
     padding: 1em;
 }
 
-.locationBased .col-md-2 {
+.col-md-2 {
     background: #fff;
     border-radius: .5em;
     box-shadow: .2em .2em .5em #ddd;
@@ -374,14 +374,14 @@ NEAR YOU
     padding-bottom: 1em;
 }
 
-.locationBased h4 {
+h4 {
     font-weight: bold;
     font-size: 1.2em;
     color: #777;
 
 }
 
-.locationBased p {
+p {
     font-size: 1em;
 }
 

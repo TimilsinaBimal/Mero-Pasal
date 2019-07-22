@@ -8,8 +8,9 @@ $shopName= $_GET['shopName'];
 $location= $_GET['location'];
 $remarks= $_GET['remarks'];
 $price = $_GET['price'];
+$category = $_GET['category'];
 
-$sql = "INSERT INTO PRODUCT(productName,productImage,price,shopName,location,remarks) VALUES('$productName','$productImage','$price','$shopName','$location','$remarks');";
+$sql = "INSERT INTO PRODUCT(productName,category,productImage,price,shopName,location,remarks) VALUES('$productName','$category','$productImage','$price','$shopName','$location','$remarks');";
 
 mysqli_query($conn,$sql);
 

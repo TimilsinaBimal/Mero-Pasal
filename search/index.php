@@ -1,3 +1,7 @@
+<?php
+include_once('../include/connection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,18 +55,20 @@
              Search Bar
 ============================================================ -->
             <div class="searchBar container">
-                <form>
+                <form action="index.php" method="POST">
                     <div class="form-row justify-content-center">
                         <div class="col-md-5">
-                            <input type="text" class="form-control" placeholder="Your Product Name">
+                        <select id="category" name= "category" class="form-control">
+                                <!-- category from JS File -->
+                            </select>
                         </div>
                         <div class="form-group col-md-5">
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" name= "location" class="form-control">
                                 <!-- Locations from JS File -->
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                            <button type="submit" name="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
                         </div>
                     </div>
 
@@ -70,25 +76,49 @@
 
             </div>
         </div>
+       
 
         <!--===================================================
 Search DETAILS
 ===================================================== -->
         <div class="container-fluid productDetail" id="product">
+
+        <?php
+            $category = $_POST['category'];
+            $location = $_POST['location'];
+$sql = "SELECT * FROM Product WHERE category= '$category' && location = '$location' ORDER BY price ASC;";
+$result = mysqli_query($conn,$sql);
+$resultCheck = mysqli_num_rows($result);
+
+if($resultCheck>0){
+    while($row=mysqli_fetch_assoc($result)){
+?>
+
             <div class="row justify-content-center">
                 <div class="col-md-3 imgColumn">
-                    <img src="../img/products/product.png" alt="${
-                    result.productName
-                  }" class="img-fluid">
+                    <img src="../img/products/product.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-6 detailColumn">
-                    <h3>Product Name</h3>
-                    <h6>NRs. price</h6>
+                    <h3><?php echo $row['productName'];?></h3>
+                    <h6>NRs. <?php echo $row['price'];?></h6>
                     <p>Sold by:</p>
-                    <h4>Shop Name</h4>
-                    <h5><i class="fa fa-map-marker"></i> Address</h5>
+                    <h4><?php echo $row['shopName'];?></h4>
+                    <h5><i class="fa fa-map-marker"></i> <?php echo $row['location'];?></h5>
                 </div>
             </div>
+            <?php 
+    }}
+    else{
+echo '<h2 class="text-center">No Items Found!!!</h2>';
+    }
+    ?>
+    <style>
+    h2{
+        font-family: poppins;
+        font-weight: bold;
+        padding: 5em 0em;
+    }
+    </style>
         </div>
 
 
@@ -144,6 +174,7 @@ Search DETAILS
         <script src="../Login/vendor/tilt/tilt.jquery.min.js"></script>
         <!--===============================================================================================-->
         <script src="../js/locationListHandler.js"></script>
+        <script src="../js/categoryHandler.js"></script>
         <!--===============================================================================================-->
         <script src="contentHandler.js"></script>
         <!--===============================================================================================-->

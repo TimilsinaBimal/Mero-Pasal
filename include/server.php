@@ -86,7 +86,7 @@ if (isset($_POST['login_user'])) {
   	  $_SESSION['username'] = $username;
       $_SESSION['success'] = "You are now logged in";
       if ("$usertype"==='customer'){
-       header('location: home/index.html');}
+       header('location: home/index.php');}
        else if ("$usertype"==='retailer'){
         header('location: retailerHome/index.php');}
   	}else {

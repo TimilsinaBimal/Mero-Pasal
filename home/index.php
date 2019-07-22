@@ -26,6 +26,7 @@ $resultCheck = mysqli_num_rows($result);
         <link rel="stylesheet" type="text/css" href="../Login/vendor/select2/select2.min.css">
         <!--===============================================================================================-->
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="style.css">
         <!--===============================================================================================-->
 
     </head>
@@ -44,11 +45,11 @@ $resultCheck = mysqli_num_rows($result);
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="collapse_target">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a id="navItems" href="/Login/" class="nav-link button"><button
+                        <li class="nav-item"><a id="navItems" href="../" class="nav-link button"><button
                                     type="button" class="btn btn-outline-success">Login</button></a></li>
-                        <li class="nav-item"><a id="navItems" href="/signUp/" class="nav-link button"><button
+                        <li class="nav-item"><a id="navItems" href="../register/" class="nav-link button"><button
                                     type="button" class="btn btn-outline-success">SignUp</button></a></li>
-                        <li class="nav-item"><a id="navItems" href="/search/" class="nav-link button"><button
+                        <li class="nav-item"><a id="navItems" href="../search/" class="nav-link button"><button
                                     type="button" class="btn btn-outline-success">Search</button></a></li>
                     </ul>
                 </div>
@@ -80,64 +81,31 @@ $resultCheck = mysqli_num_rows($result);
                 </div>
             </div>
         </div>
-
-
-
-
-        <div class="featured">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center">Featured <span>Products</span></h2>
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-                            <!-- Carousel indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
-                            <!-- Wrapper for carousel items -->
-                            <div class="carousel-inner">
-
+        
+        
+        <div class="locationBased container" id='nearYou'>
+             <h2><span> Featured</span> Products </h2>  
+             <div class="row justify-content-center">  
 <?php
-if($resultCheck>0){
+        if($resultCheck>0){
     while($row=mysqli_fetch_assoc($result)){
-?>
-                                <div class="item carousel-item active">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <div class="img-box">
-                                                    <img src="productImage/<?php echo $row['productImage'];?>" class="img-responsive img-fluid" alt="">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4><?php echo $row['productName']; ?></h4>
-
-                                                    <p class="item-price"><b>NRs.<?php echo $row['price']; ?></b>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            </div>
-                            <?php }}?>
-                            <!-- Carousel controls -->
-                            <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a class="carousel-control right carousel-control-next" href="#myCarousel"
-                                data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        echo ('
+             <div class="col-md-2">
+            <img class= "img-fluid" src="../img/products/product.png" alt="">
+                <h4>'. $row["productName"].'</h4>
+             <p>NRs.'. $row["price"].' </p>
             </div>
-        </div>
-
+        ');
+    }}
+    ?>
+     </div>
+         </div>
+         <style>
+         .locationBased img{
+             height: 10em !important;
+             width: auto;
+         }
+         </style>
 
         <!-- FIND HOTELS INFORMATION -->
         <div class="information container-fluid">

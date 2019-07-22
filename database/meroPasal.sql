@@ -14,6 +14,8 @@ CREATE TABLE Product
     AUTO_INCREMENT,
     productName VARCHAR
     (255),
+    category VARCHAR
+    (255),
     productImage LONGBLOB,
     price VARCHAR
     (255),

@@ -91,6 +91,12 @@
     </select>
     </div>
   </div>
+  <div class="row">
+  <div class="col">
+    <select class="form-control" id="category" name="category" id="exampleFormControlSelect1">
+    </select>
+    </div>
+  </div>
   <button type="submit" name="submit" class="btn btn-outline-primary">Submit</button>
 </form>
 </div>
@@ -155,6 +161,7 @@
          <script src="../Login/vendor/tilt/tilt.jquery.min.js"></script>
          <!--===============================================================================================-->
          <script src="../js/locationListHandler.js"></script>
+         <script src="../js/categoryHandler.js"></script>
          <!--===============================================================================================-->
          <script src="js/featuredContent.js"></script>
          <!--===============================================================================================-->
