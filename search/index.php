@@ -102,24 +102,67 @@ if($resultCheck>0){
                     <h3><?php echo $row['productName'];?></h3>
                     <h6>NRs. <?php echo $row['price'];?></h6>
                     <p>Sold by:</p>
-                    <h4><?php echo $row['shopName'];?></h4>
+                    <a href="" data-toggle="modal" data-target="#<?php echo $row["shopName"];?>">
+                    <h4><?php echo $row['shopName'];?></h4></a>
                     <h5><i class="fa fa-map-marker"></i> <?php echo $row['location'];?></h5>
                 </div>
             </div>
-            <?php 
+       
+
+<?php 
+$query = "SELECT * FROM ShopInfo;";
+$results = mysqli_query($conn,$query);
+
+
+    while($data=mysqli_fetch_assoc($results)){
+
+?>
+
+    <div class="modal fade" id="<?php echo $row["shopName"];?>">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3><?php echo $data["shopName"];?></h3>
+            <div class="border-bottom"></div>
+            <div class="row justify-content-around">
+                <div class="col-md-6">
+                    <h6>PAN NO/Reg No.</h6>
+                    <h5><?php echo $data["regNo"];?></h5>
+                    <h6>Contact Number</h6>
+                    <h5><?php echo $data["contact"];?></h5>
+                    <h6>Category</h6>
+                    <h5><?php echo $data["category"];?></h5>
+                </div>
+                <div class="col-md-6">
+                    <h6>Email</h6>
+                    <h5><?php echo $data["email"];?></h5>
+                    <h6>Website</h6>
+                    <h5><?php echo $data["website"];?></h5>
+                </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php
+    } 
     }}
     else{
 echo '<h2 class="text-center">No Items Found!!!</h2>';
     }
     ?>
-    <style>
+     </div>
+
+
+<style>
     h2{
         font-family: poppins;
         font-weight: bold;
         padding: 5em 0em;
     }
     </style>
-        </div>
+
 
 
         <!-- Footer Area -->

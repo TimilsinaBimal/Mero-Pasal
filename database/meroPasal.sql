@@ -28,3 +28,13 @@ CREATE TABLE Product
     PRIMARY KEY
     (productID)
 );
+
+    CREATE TABLE ShopInfo
+    (
+        regNo VARCHAR(20) PRIMARY KEY,
+        shopName VARCHAR(255),
+        contact VARCHAR(10),
+        email VARCHAR(20),
+        website VARCHAR(30),
+        category VARCHAR(20)
+    );

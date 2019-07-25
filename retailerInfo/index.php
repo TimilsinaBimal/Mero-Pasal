@@ -1,9 +1,3 @@
-<?php
-include_once('../include/connection.php');
-$sql= "SELECT * FROM PRODUCT WHERE remarks='Featured Product';";
-$result = mysqli_query($conn,$sql);
-$resultCheck = mysqli_num_rows($result);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,34 +21,12 @@ $resultCheck = mysqli_num_rows($result);
         <!--===============================================================================================-->
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../retailerHome/style.css">
         <!--===============================================================================================-->
 
     </head>
 
     <body>
-        <nav id="nav" class="navbar navbar-expand-lg bg-light fixed-top">
-            <!-- AAVISKAR LOGO HERE -->
-            <div class="container wave">
-                <span>
-                    <a class="navbar-brand" href="index.html">
-                        <img id="logo" src="img/logo.png" class="d-inline-block align-top" alt="L O G O">
-                    </a>
-                </span>
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="collapse_target">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a id="navItems" href="../" class="nav-link button"><button
-                                    type="button" class="btn btn-outline-success">Login</button></a></li>
-                        <li class="nav-item"><a id="navItems" href="../register/" class="nav-link button"><button
-                                    type="button" class="btn btn-outline-success">SignUp</button></a></li>
-                        <li class="nav-item"><a id="navItems" href="../search/" class="nav-link button"><button
-                                    type="button" class="btn btn-outline-success">Search</button></a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
 
         <div class="header">
@@ -62,73 +34,57 @@ $resultCheck = mysqli_num_rows($result);
             <p>Find your ideal Product and compare prices from <br>different shops</p>
         </div>
 
-        <div class="about">
-            <div class="row justify-content-center">
-                <div class="col-md-3 column">
-                    <i class="fa fa-search"></i>
-                    <h4>Search</h4>
-                    <p>Search your Favourite Products in just a Click.</p>
-                </div>
-                <div class="col-md-3 column">
-                    <i class="fa fa-users"></i>
-                    <h4>Compare</h4>
-                    <p>Compare the Prices of Same products.</p>
-                </div>
-                <div class="col-md-3 column">
-                    <i class="fa fa-money"></i>
-                    <h4>Buy</h4>
-                    <p>Find the best Price and Location of Shop and Buy the Product at Shop.</p>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div class="locationBased container" id='nearYou'>
-             <h2><span> Featured</span> Products </h2>  
-             <div class="row justify-content-center">  
-<?php
-        if($resultCheck>0){
-    while($row=mysqli_fetch_assoc($result)){
-        echo ('
-             <div class="col-md-2">
-            <img class= "img-fluid" src="../img/products/product.png" alt="">
-                <h4>'. $row["productName"].'</h4>
-             <p>NRs.'. $row["price"].' </p>
-            </div>
-        ');
-    }}
-    ?>
-     </div>
-         </div>
-         <style>
-         .locationBased img{
-             height: 10em !important;
-             width: auto;
-         }
-         </style>
-
-        <!-- FIND HOTELS INFORMATION -->
-        <div class="information container-fluid">
-            <div class="container">
-                <div class="row justify-content-around text-center">
-                    <div class="col-md-5 inform">
-                        <h3>Find Cheap and Quality Products on Mero Pasal</h3>
-                        <div class="border-bottom"></div>
-                        <p>Here in our website, you can find the cheap and quality goods. We offer you the service to compare the prices of same products in the shops of any particular location. So, you can choose your preferred location and can get the products at lowest possible price.</p>
-                    </div>
-                    <!-- HOW TO FIND-->
-                    <div class="col-md-5 howToFind">
-                        <h3>How to Find your Product</h3>
-                        <div class="border-bottom"></div>
-                        <p> Just Search what is your need with your preferred location. We will provide you with all the information we have. You can have the sorted price range in Ascending order, which leads you to choose the cheapest good at a particular shop. Its easy than you thought. Just give it a try.
 
 
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer Area -->
+
+
+<!-- DATA INSERTION FROM HERE -->
+
+<div class="container insertData">
+<h2 class="text-center">Enter Details of Shop</h2>
+<form method="post" action="../include/infoInsert.php">
+<div class="row">
+
+<div class="col">
+<select class="form-control" name="category" id="category">
+    </select>
+</div>
+</div>
+	  <div class="row">
+	  <div class="col">
+      <input type="text" class="form-control" name="shopName" placeholder="Name of Shop">
+    </div>
+	</div>
+
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" name="contact" placeholder="Contact Number">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="email" class="form-control" name="email" placeholder="Email Address">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" name="website" placeholder="Website">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" name="regNo" placeholder="Reg No./ PAN No.">
+    </div>
+  </div>
+  <div class="row justify-content-center">
+	  <div class="col">
+	  <button type="submit" name="submit" class="btn btn-outline-primary">Submit</button>
+	  </div>
+ 
+  </div>
+  </form>
+  </div>
+
         <footer id="footer" class="footer text-center">
             <div class="container">
                 <div class="row">
@@ -179,6 +135,8 @@ $resultCheck = mysqli_num_rows($result);
         <script src="../Login/vendor/tilt/tilt.jquery.min.js"></script>
         <!--===============================================================================================-->
         <script src="home/js/featuredContent.js"></script>
+
+        <script src="../js/categoryHandler.js"></script>
         <!--===============================================================================================-->
         <script src="../js/script.js"></script>
         <!--===============================================================================================-->
